@@ -27,3 +27,5 @@ int login() {
     cout << "PASSWORD:";
     cin >> inputPassword;
 
+    return (inputUsername == login && inputPassword == pass);
+}
