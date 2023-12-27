@@ -29,3 +29,8 @@ int login() {
 
     return (inputUsername == login && inputPassword == pass);
 }
+void displayMenu() {
+   
+    cout << "1. Add Transaction" << endl;
+    cout << "2. View Transactions" << endl;
+
