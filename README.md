@@ -12,7 +12,7 @@ void setBudgetGoal(double amount, double& goal) {
     cout << "Your savings goal: $" << goal << endl;
 
     if (goal > amount) {
-        cout << "Goal cannot be higher than current balance." << endl;
+        cout << "Goal cannot be higher than Current balance." << endl;
     } else {
         cout << "Goal set successfully!" << endl;
     }
