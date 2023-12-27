@@ -17,3 +17,13 @@ void setBudgetGoal(double amount, double& goal) {
         cout << "Goal set successfully!" << endl;
     }
 }
+int login() {
+    string login = "user123";
+    string pass = "pass123";
+    string inputUsername, inputPassword;
+
+    cout << "USERNAME:";
+    cin >> inputUsername;
+    cout << "PASSWORD:";
+    cin >> inputPassword;
+
