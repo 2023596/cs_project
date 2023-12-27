@@ -1,2 +1,7 @@
-# cs_project
-This is for the CS101 project named Personal Finance Dashboard.
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Transaction {
+    double amount;
+};
