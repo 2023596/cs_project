@@ -89,4 +89,39 @@ void withdrawal(Transaction transactions[], int& count, double& currentBalance, 
     }
 }
 
+void viewTransactions(Transaction transactions[], int count) {
+	int a=1;
+    cout << "Transactions:" << endl;
+    for (int i = 0; i < count; i++) {
+        cout << "Transaction Amount "<< a++<<":" << transactions[i].amount << endl;
+    }
+}
+
+void analyzeData(Transaction transactions[], int count, double currentBalance) {
+    cout << "Performing data analysis..." << endl;
+
+    if (count > 0) {
+        cout << "Transaction History:" << endl;
+        for (int i = 0; i < count; ++i) {
+            cout << "Transaction Amount: " << transactions[i].amount << endl;
+        }
+    } else {
+        cout << "No transactions to analyze." << endl;
+    }
+
+    double totalDeposits = 0.0;
+    double totalWithdrawals = 0.0;
+    for (int i = 0; i < count; ++i) {
+        if (transactions[i].amount > 0) {
+            totalDeposits += transactions[i].amount;
+        } else {
+            totalWithdrawals += transactions[i].amount;
+        }
+    }
+
+    cout << "Total Deposits: $" << totalDeposits << endl;
+    cout << "Total Withdrawals: $" << totalWithdrawals << endl;
+    cout << "Remaining Balance: $" << currentBalance << endl;
+}
+
 
