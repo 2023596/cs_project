@@ -124,4 +124,49 @@ void analyzeData(Transaction transactions[], int count, double currentBalance) {
     cout << "Remaining Balance: $" << currentBalance << endl;
 }
 
+int main() {
+    bool isLoggedIn = login();
+    if (isLoggedIn) {
+        Transaction transactions[100];
+        int transactionCount = 0;
+        double currentBalance = 0.0;
+        double savingsGoal = 0.0;
+        int choice;
+           cout<<"****PERSONAL FINANCE DASHBOARD****";
+            do {
+        	cout<<"\n";
+
+        
+            displayMenu();
+            cin >> choice;
+
+            switch (choice) {
+                case 1:
+                    addTransaction(transactions, transactionCount, currentBalance);
+                    break;
+                case 2:
+                    viewTransactions(transactions, transactionCount);
+                    break;
+                case 3:
+                    analyzeData(transactions, transactionCount, currentBalance);
+                    break;
+                case 4:
+                    setBudgetGoal(currentBalance, savingsGoal);
+                    break;
+                case 5:
+                    withdrawal(transactions, transactionCount, currentBalance, savingsGoal);
+                    break;
+                case 6:
+                    cout << "Exiting the program. Thank you!" << endl;
+                    break;
+                default:
+                    cout << "Invalid choice. Please enter a valid option." << endl;
+                    break;
+            }
+        } while (choice != 6);
+    } else {
+        cout << "Login failed" << endl;
+    }
+    return 0;
+}
 
