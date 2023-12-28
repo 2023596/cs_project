@@ -61,3 +61,32 @@ void addTransaction(Transaction transactions[], int& count, double& currentBalan
     }
 }
 
+void withdrawal(Transaction transactions[], int& count, double& currentBalance, double goal) {
+    int numWithdrawals;
+    cout << "Enter the number of withdrawals you want to make: ";
+    cin >> numWithdrawals;
+
+    for (int i = 0; i < numWithdrawals; ++i) {
+        double amount;
+        cout << "Enter the amount to withdraw: $";
+        cin >> amount;
+        
+        if (goal > 0 && amount > goal) {
+            cout << "WARNING: YOUR WITHDRAWAL MAY AFFECT YOUR SAVINGS GOAL!" << endl;
+            cout << "HOWEVER, THE WITHDRAWAL HAS BEEN APPROVED AS PER YOUR REQUEST." << endl; 
+        }
+
+        if (amount <= currentBalance) {
+            Transaction newTransaction;
+            newTransaction.amount = -amount; // Represent withdrawal as a negative amount
+            transactions[count++] = newTransaction;
+            currentBalance -= amount; // Update the current balance
+            cout << "Withdrawal successful!" << endl;
+        } else {
+            cout << "Withdrawal amount exceeds the current balance. The transaction will proceed." << endl;
+            break;
+        }
+    }
+}
+
+
