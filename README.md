@@ -41,4 +41,23 @@ void displayMenu() {
     cout<<"\n";
 }
 
+void addTransaction(Transaction transactions[], int& count, double& currentBalance) {
+    int numTransactions;
+    cout << "Enter the number of transactions you want to add: ";
+    cin >> numTransactions;
+
+    for (int i = 0; i < numTransactions; ++i) {
+        if (count < 100) {
+            Transaction newTransaction;
+            cout << "Enter transaction amount: $";
+            cin >> newTransaction.amount;
+            transactions[count++] = newTransaction;
+            currentBalance += newTransaction.amount; // Update the current balance
+            cout << "Transaction added successfully!" << endl;
+        } else {
+            cout << "Transaction limit reached!" << endl;
+            break;
+        }
+    }
+}
 
