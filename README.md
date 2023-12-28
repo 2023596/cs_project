@@ -33,4 +33,12 @@ void displayMenu() {
    
     cout << "1. Add Transaction" << endl;
     cout << "2. View Transactions" << endl;
+     cout << "3. Analyze Data" << endl;
+    cout << "4. Set Budget Goal" << endl;
+    cout << "5. Withdrawal" << endl;
+    cout << "6. Exit" << endl;
+    cout << "Enter your choice: ";
+    cout<<"\n";
+}
+
 
